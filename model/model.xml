@@ -1,0 +1,25 @@
+<mujoco model="example1">
+  <option gravity="0 0 -9.81" timestep="0.002"/>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3" rgb2=".2 .3 .4" width="300" height="300"/>
+    <material name="grid" texture="grid" texrepeat="8 8" reflectance=".2"/>
+  </asset>
+
+  <worldbody>
+    <geom type="plane" size="10 10 .01" material="grid"/>
+
+    <light pos="0 0 3" dir="0 0 -1" diffuse=".8 .8 .8"/>
+
+    <body name="red_box" pos="0 0 10">
+      <freejoint/>
+      <geom type="box" size=".2 .2 .2" rgba="1 0 0 1"/>
+    </body>
+
+    <geom name="green_sphere" pos=".2 .2 1.2" size=".1" rgba="0 1 0 1"/>
+  </worldbody>
+
+  <visual>
+    <global offwidth="1920" offheight="1080"/>
+  </visual>
+</mujoco>
